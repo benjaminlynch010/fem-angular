@@ -32,6 +32,9 @@ import { Component } from '@angular/core';
         </section>
     </article>
 }
+    @empty {
+        <p>No current listings.  Check back later!</p>
+    }
     </section>
   `,
   styleUrl: 'app.component.css',
@@ -44,7 +47,7 @@ export class AppComponent {
       miles: 54354,
       price: 1000,
       year: 2022,
-      transmission: 'automatic',
+      transmission: 'manual',
     },
     {
       make: 'Ronda',
