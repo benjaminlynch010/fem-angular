@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../data';
 
 @Component({
@@ -13,7 +13,7 @@ import { User } from '../data';
 })
 export class UserInfoComponent {
   // Test user data
-  user: User = {
+  @Input() user: User = {
     id: -1,
     name: 'Ervin Howell',
     username: 'Antonette',
