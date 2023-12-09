@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Car } from './car';
+import { ListingComponent } from './listing/listing.component';
 
 @Component({
   selector: 'app-root',
