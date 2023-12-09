@@ -6,33 +6,47 @@ import { Todo } from './todo';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
-  todos: signal<Todo[]>(
-    [
-        {
-          id: 1,
-          title: "Learn Angular",
-          completed: false,
-        },
-        {
-          id: 2,
-          title: "Learn TypeScript",
-          completed: false,
-        },
-        {
-          id: 3,
-          title: "Learn RxJS",
-          completed: false,
-        },
-      ]
-  ),
   template: `
     <h1>Building a TODO List</h1>
-
-    
+    <ul>
+    @for(todo of todos(); track todo.id) {
+        <li>
+            <input
+            type="checkbox"
+            [checked]="todo.completed"
+            changed="updateTodo(todo)"
+            #el
+            >
+            {{ todo.title }}
+            {{ todo.completed }}
+        </li>
+    }
+    </ul>
   `,
   styles: [],
 })
+
 export class AppComponent {
-  
-  updateTodo(todo: Todo) {}
+    todos = signal<Todo[]>(
+        [
+            {
+              id: 1,
+              title: "Learn Angular",
+              completed: false,
+            },
+            {
+              id: 2,
+              title: "Learn TypeScript",
+              completed: false,
+            },
+            {
+              id: 3,
+              title: "Learn RxJS",
+              completed: false,
+            },
+          ]
+    );
+  updateTodo(todo: Todo) {
+    
+  }
 }
