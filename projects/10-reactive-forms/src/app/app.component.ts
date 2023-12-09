@@ -37,10 +37,7 @@ export class AppComponent {
     this.postBlog(this.blogForm.value.title, this.blogForm.value.body);
   }
 
-  postBlog(
-    title: string | undefined | null,
-    body: string | undefined | null
-    ) {
+  postBlog(title: string | null | undefined, body: string | null | undefined) {
     console.log(`Posting blog titles ${title}, with the contents ${body}.`);
   }
 }
