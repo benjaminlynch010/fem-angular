@@ -14,7 +14,7 @@ import { Todo } from './todo';
             <input
             type="checkbox"
             [checked]="todo.completed"
-            changed="updateTodo(todo)"
+            (changed)="updateTodo(todo)"
             #el
             >
             {{ todo.title }}
@@ -47,6 +47,6 @@ export class AppComponent {
           ]
     );
   updateTodo(todo: Todo) {
-    
+
   }
 }
