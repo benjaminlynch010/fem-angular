@@ -6,7 +6,25 @@ import { Todo } from './todo';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
-  todos: signal<Todo[]>(),
+  todos: signal<Todo[]>(
+    [
+        {
+          id: 1,
+          title: "Learn Angular",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Learn TypeScript",
+          completed: false,
+        },
+        {
+          id: 3,
+          title: "Learn RxJS",
+          completed: false,
+        },
+      ]
+  ),
   template: `
     <h1>Building a TODO List</h1>
 
